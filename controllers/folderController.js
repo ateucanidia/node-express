@@ -36,6 +36,18 @@ controller.fetchFolderidSubfolders = async(req, res) => {
 
 }
 
+controller.fetchFolderidFiles = async(req, res) => {
+  let {id}=req.params;
+  res.send(await db.File.findAll(
+    {
+      where:{
+        idFolder:id
+      }
+    })
+  );
+
+}
+
 controller.createFolder = async(req, res) => {
     console.log(req.body);
       try {

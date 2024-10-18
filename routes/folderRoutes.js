@@ -2,9 +2,10 @@ const express = require('express');
 const controller = require('./../controllers/folderController');
 const router = express.Router();
 
-router.get('/folders', controller.fetchFolder );
+router.get('/folders', controller.fetchFolder );     
 router.get('/folders/:id', controller.fetchFolderid);
 router.get('/folders/:id/subfolders', controller.fetchFolderidSubfolders);
+router.get('/folders/:id/files', controller.fetchFolderidFiles);
 router.post('/folders', controller.createFolder);
 // router.post('/sub-folders', controller.createSubFolder);
 router.put('/folder/:id', controller.updateFolder);
